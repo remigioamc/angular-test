@@ -1,0 +1,21 @@
+.module-container{
+    height: 450px;
+    width: 250px;
+    margin: auto;
+    right: calc(50% - 125px);
+    top: calc(50% - 225px);
+    position: absolute;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
+}
+.module{
+    background: #222;
+    color: white;
+    padding: 2rem;
+    height: 100%
+}
+.enter{
+    margin: auto;
+    margin-top: 50px;
+    border: solid 2px #82407f;
+}

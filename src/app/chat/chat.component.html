@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row" *ngFor="let message of chat"
+    >
+    <div [ngClass]="message.user_id == 0 ? 'text-right' : 'text-left'" class="w-100">
+    <p [ngClass]="message.user_id == 0 ? 'bg-pink' : 'bg-blue'"
+    class="text rounded-lg px-3" *ngIf="message.type=='text'">{{message.value}}</p>
+    <div *ngIf="message.type=='gif'" class="card-container">
+      <mat-progress-spinner [hidden]="message.loaded" class="spinner" color="primary" mode="indeterminate" diameter="50">
+      </mat-progress-spinner>
+      <img [hidden]="!message.loaded" class="w-100 h-100 rounded-lg" (load)="message.loaded = true;"
+        [src]="message.value">
+    </div>
+  </div>
+  </div>
+</div>
+<footer page-footer class="d-flex">
+  <button mat-fab (click)="openGifSearch()">
+    GIF
+  </button>
+  <input type="text" class="rounded-xl" matInput
+  [formControl]="input_text" class="w-100 mx-3">
+  <button mat-fab (click)="addText()">
+    <mat-icon>send</mat-icon>
+  </button>
+</footer>

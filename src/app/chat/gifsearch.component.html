@@ -1,0 +1,14 @@
+<div class="cards-container">
+  <input type="text" placeholder="Buscar Gif" aria-label="Busqueda" matInput
+  [formControl]="search" class="w-100">
+  <mat-progress-spinner class="spinner" *ngIf="loading" color="primary" mode="indeterminate" diameter="25">
+  </mat-progress-spinner>
+  <div class="row no-gutters">
+    <div class="card-container col-3" *ngFor="let gif of gifs | async">
+      <mat-progress-spinner [hidden]="gif.loaded" class="spinner" color="primary" mode="indeterminate" diameter="50">
+      </mat-progress-spinner>
+      <img [hidden]="!gif.loaded" class="w-100 h-100" (load)="gif.loaded = true;"
+        [src]="gif.images.original.url" (click)=selected(gif)>
+    </div>
+  </div>
+</div>

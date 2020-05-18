@@ -1,0 +1,33 @@
+.card-container{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.text{
+    width: max-content;
+    display: inline-block;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #313131;
+    padding: 20px;
+}
+.container{
+    height: 90vh;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.container::-webkit-scrollbar {
+    display: none;
+  }
+.bg-blue{
+    background: blue;
+}
+.bg-pink{
+    background-color: #ff4081
+}
